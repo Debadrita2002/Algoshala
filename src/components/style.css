@@ -1,0 +1,155 @@
+.signup-wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F7FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup-box{
+    width: 80%;
+    height: 80vh;
+    border-radius: 10px;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.signup-left{
+    width: 50%;
+    background-color: #89b7f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signup-right{
+    width: 50%;
+}
+.signup-left-heading{
+    font-size: 28px;
+}
+.signup-left-para{
+    font-size: 15px;
+    padding: 10px;
+}
+.signup-form{
+    padding: 10px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center ;
+}
+.signup-form input{
+    padding: 10px;
+    border:1px solid #F5F7FB;
+    border-radius: 10px;
+    width:80%;
+    font-size: 18px;
+
+}
+.signup-form button{
+    background-color: #538ee1;
+    padding: 10px;
+    color: white;
+    width: 80%;
+    border-radius: 10px;
+    height: 45px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.you-logo{
+    height: 100px;
+}
+.link{
+    color: #7033FF;
+    text-decoration: none;
+    margin-top: 20px;
+
+}
+/*...................Dashboard...............*/
+.dashboard-main-container{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(to right,#89b7f8,#b699f9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container{
+    width: 95%;
+    height: 95vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.nav-container{
+    width: 20%;
+    height: 95vh;
+    background-color: #7033FF;
+    padding: 10px;
+}
+.main-container{
+    width: 80%;
+    height: 95vh;
+    background-color: white;
+}
+.top-bar{
+    height: 80px;
+    width: 100%;
+    background-color: #F5F7FB;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 20px;
+}
+.logo-container{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(109, 140, 167);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-logo{
+    width: 50px;
+    height: 50px;
+}
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-name{
+    font-size: 15px;
+
+}
+.logout-button{
+    background-color: #7033FF;
+    color: #F5F7FB;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.brand-container{
+    height: 100px;
+    display: flex;
+    color: aliceblue;
+    gap: 5px;
+    align-items: center;
+}
+.brand-name{
+    color: aliceblue;
+    font-size: 19px;
+}
+
+.brand-slogan{
+    font-size: 12px;
+    color: yellow;
+    position: relative;
+    top: -10px;
+}
