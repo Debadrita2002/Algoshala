@@ -26,7 +26,7 @@ const Signup = () => {
     formData.append('password',password)
     formData.append('image',image)
     
-    axios.post('http://localhost:4200/user/signup',formData)
+    axios.post('https://learning-management-system-self-delta.vercel.app/user/signup',formData)
     .then(res=>{
       setLoading(false);
       toast.success('your account created succesfully')
@@ -58,7 +58,7 @@ const Signup = () => {
       </div>
       <div className='signup-right '>
         <hr/>
-        <form onSubmit={submitHandler} className='signup-form'>
+        <form onSubmit={submitHandler} className='form'>
           <h1>Create your account</h1>
           <input required onChange={e=>{ setFullName(e.target.value)}} type='text' placeholder='Institute name'/>
           <input required onChange={e=>{ setEmail(e.target.value)}} type='email' placeholder='Email'/>
@@ -66,7 +66,7 @@ const Signup = () => {
           <input required onChange={e=>{ setPassword(e.target.value)}} type='password' placeholder='Password'/>
           <input required onChange={fileHandler} type='file'/>
           <img className='you-logo' alt='your logo' src={imageUrl}/>
-          <button type='submit'>{isLoading && <i class="fa-solid fa-spinner fa-spin-pulse"></i>}Submit</button>
+          <button type='submit'>{isLoading && <i className="fa-solid fa-spinner fa-spin-pulse"></i>}Submit</button>
           <Link className='link' to='/login'>Sign in</Link>
         </form>
       </div>

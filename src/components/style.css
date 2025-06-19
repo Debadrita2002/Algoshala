@@ -33,7 +33,7 @@
     font-size: 15px;
     padding: 10px;
 }
-.signup-form{
+.form{
     padding: 10px;
     height: 70vh;
     display: flex;
@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center ;
 }
-.signup-form input{
+.form input{
     padding: 10px;
     border:1px solid #F5F7FB;
     border-radius: 10px;
@@ -50,7 +50,7 @@
     font-size: 18px;
 
 }
-.signup-form button{
+.form button{
     background-color: #538ee1;
     padding: 10px;
     color: white;
@@ -152,4 +152,44 @@
     color: yellow;
     position: relative;
     top: -10px;
+}
+/*..menu.......*/
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    /*gap: 15px;*/
+}
+.menu-link{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 90%;
+    padding: 15px;
+    border-radius: 5px;
+}
+.menu-active-link{
+  color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 90%;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+}
+.menu-link:hover{
+  background-color: #1a1a1a;
+  transition: 0.5s;
+}
+.fa-solid{
+  margin-right: 10px j ;
+}
+.contact-us{
+  position: absolute;
+  bottom: 5vh;
+  color: yellow;
+}
+
+/*main-container....*/
+.outlet-area{
+  padding: 10px;
 }

@@ -17,14 +17,19 @@ const Login = () => {
     event.preventDefault();
     setLoading(true);
     
-    axios.post('http://localhost:4200/user/login',{
+    axios.post('https://learning-management-system-self-delta.vercel.app/user/login',{
       email:email,
       password:password
     })
     .then(res=>{
       setLoading(false);
+      localStorage.setItem('token',res.data.token)
+      localStorage.setItem('fullName',res.data.fullName)
+      localStorage.setItem('imageUrl',res.data.imageUrl)
+      localStorage.setItem('imageId',res.data.imageId)
+      localStorage.setItem('email',res.data.email) 
       navigate('/dashboard')
-      console.log(res)
+      console.log(res.data)
     })
     .catch(err=>{
       setLoading(false);
@@ -43,11 +48,11 @@ const Login = () => {
       </div>
       <div className='signup-right '>
         <hr/>
-        <form onSubmit={submitHandler} className='signup-form'>
+        <form onSubmit={submitHandler} className='form'>
           <h1>Sign in your account</h1>
           <input required onChange={e=>{ setEmail(e.target.value)}} type='email' placeholder='Email'/>
           <input required onChange={e=>{ setPassword(e.target.value)}} type='password' placeholder='Password'/>
-          <button type='submit'>{isLoading && <i class="fa-solid fa-spinner fa-spin-pulse"></i>}Submit</button>
+          <button type='submit'>{isLoading && <i className="fa-solid fa-spinner fa-spin-pulse"></i>}Submit</button>
           <Link className='link' to='/signup'>Create your account</Link>
         </form>
       </div>
