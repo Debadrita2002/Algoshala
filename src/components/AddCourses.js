@@ -2,6 +2,7 @@ import React, { useState }  from 'react'
 import '../components/style.css'
 import axios from 'axios'
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddCourses = () => {
@@ -13,6 +14,8 @@ const AddCourses = () => {
   const [image, setImage] = useState(null)
   const [imageUrl, setImageUrl] = useState('')
   const [isLoading, setLoading] = useState('')
+
+  const navigate=useNavigate();
 
 const submitHandler=(e)=>{
   e.preventDefault()
@@ -35,6 +38,7 @@ const submitHandler=(e)=>{
     setLoading(false);
     console.log(res.data);
     toast.success('new course added..')
+    navigate('/dashboard/courses')
   })
   .catch(err=>{
     setLoading(false);
@@ -55,12 +59,12 @@ const submitHandler=(e)=>{
     <div>
         <form onSubmit={submitHandler} className='form'>
           <h1>Add New Course</h1>
-            <input onChange={e=>{setCourseName(e.target.value)}} placeholder='Course name' type='text'/>
-            <input onChange={e=>{setDescription(e.target.value)}} placeholder='Description' type='text'/>
-            <input onChange={e=>{setPrice(e.target.value)}} placeholder='Price' type='number'/>
-            <input onChange={e=>{setStartingDate(e.target.value)}} placeholder='Starting Date(DD-MM-YY)' type='text'/>
-            <input onChange={e=>{setEndDate(e.target.value)}} placeholder='End Date(DD-MM-YY)' type='text'/>
-            <input onChange={fileHandler}  type='file'/>
+            <input required onChange={e=>{setCourseName(e.target.value)}} placeholder='Course name' type='text'/>
+            <input required onChange={e=>{setDescription(e.target.value)}} placeholder='Description' type='text'/>
+            <input required onChange={e=>{setPrice(e.target.value)}} placeholder='Price' type='number'/>
+            <input required onChange={e=>{setStartingDate(e.target.value)}} placeholder='Starting Date(DD-MM-YY)' type='text'/>
+            <input required onChange={e=>{setEndDate(e.target.value)}} placeholder='End Date(DD-MM-YY)' type='text'/>
+            <input required onChange={fileHandler}  type='file'/>
             {imageUrl && <img className='you-logo' alt='your logo' src={imageUrl}/>}
             <button type='submit' className='submit-btn'>{isLoading && <i className="fa-solid fa-spinner fa-spin-pulse"></i>}Submit</button>
         </form>

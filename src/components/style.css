@@ -50,6 +50,13 @@
     font-size: 18px;
 
 }
+select{
+    padding: 10px;
+    border:1px solid #F5F7FB;
+    border-radius: 10px;
+    width:80%;
+    font-size: 18px;
+}
 .form button{
     background-color: #538ee1;
     padding: 10px;
@@ -192,4 +199,42 @@
 /*main-container....*/
 .outlet-area{
   padding: 10px;
+}
+/*......courses......*/
+
+.course-wrapper{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.course-box{
+    width: 23%;
+    height:25vh ;
+    background-color: #eee;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.course-box:hover{
+    box-shadow: 1px 1px 10px royalblue;
+    transition: 0.5s;
+}
+.course-thumbnail{
+    height: 17vh;
+    width: 100%;
+}
+.coursee-name{
+    margin-top: 10px;
+    font-size: 15px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.coursee-rs{
+    margin-top: -19px;
+    font-size: 13px;
+    text-align: center;
 }

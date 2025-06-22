@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -12,6 +11,7 @@ import Students from './components/Students';
 import AddStudent from './components/AddStudent';
 import CollectFee from './components/CollectFee';
 import PaymentHistory from './components/PaymentHistory';
+import CourseDetail from './components/CourseDetail';
 
 function App() {
   const myRouter = createBrowserRouter([
@@ -26,7 +26,8 @@ function App() {
       {path:'students',Component:Students},
       {path:'add-student',Component:AddStudent},
       {path:'collect-fee',Component:CollectFee},
-      {path:'payment-history',Component:PaymentHistory}
+      {path:'payment-history',Component:PaymentHistory},
+      {path:'course-detail/:id',Component:CourseDetail}
     ]}
   ])
   return (
