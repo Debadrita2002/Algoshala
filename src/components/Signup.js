@@ -66,8 +66,8 @@ const Signup = () => {
           <input required onChange={e=>{ setPassword(e.target.value)}} type='password' placeholder='Password'/>
           <input required onChange={fileHandler} type='file'/>
           <img className='you-logo' alt='your logo' src={imageUrl}/>
-          <button type='submit'>{isLoading && <i className="fa-solid fa-spinner fa-spin-pulse"></i>}Submit</button>
-          <Link className='link' to='/login'>Sign in</Link>
+          <button type='submit'>Submit</button>
+          <Link className='{isLoading && <i className="fa-solid fa-spinner fa-spin-pulse"></i>}link' to='/login'>Sign in</Link>
         </form>
       </div>
     </div>
