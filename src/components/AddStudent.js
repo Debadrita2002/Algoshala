@@ -13,7 +13,7 @@ const AddStudent = () => {
   const [courseId, setCourseId] = useState('')
   const [image, setImage] = useState(null)
   const [imageUrl, setImageUrl] = useState('')
-  const [isLoading, setLoading] = useState('')
+  const [isLoading, setLoading] = useState(false)
   const [courseList, setCourseList] = useState([])
 
   const navigate=useNavigate();
@@ -44,9 +44,9 @@ const submitHandler=(e)=>{
 
   const formData= new FormData();
   formData.append('fullName',fullName)
-  formData.append('email',email)
   formData.append('phone',phone)
-  formData.append('adress',address)
+  formData.append('email',email)
+  formData.append('address',address)
   formData.append('courseId',courseId)
   formData.append('image',image)
 
@@ -81,8 +81,8 @@ const submitHandler=(e)=>{
         <form onSubmit={submitHandler} className='form'>
           <h1>Add New Student</h1>
             <input onChange={(e)=>{setFullName(e.target.value)}} required placeholder='Student name' type='text'/>
-            <input onChange={(e)=>{setEmail(e.target.value)}} required placeholder='Email' type='text'/>
             <input onChange={(e)=>{setPhone(e.target.value)}} required  placeholder='Phone no' type='number'/>
+            <input onChange={(e)=>{setEmail(e.target.value)}} required placeholder='Email' type='text'/>
             <input onChange={(e)=>{setAddress(e.target.value)}} required placeholder='Full adress' type='text'/>
             <select onChange={(e)=>{setCourseId(e.target.value)}}>
               <option>Select course</option>
