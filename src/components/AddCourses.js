@@ -1,8 +1,8 @@
-import React, { useState }  from 'react'
+import React, { useEffect, useState }  from 'react'
 import '../components/style.css'
 import axios from 'axios'
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const AddCourses = () => {
@@ -16,6 +16,13 @@ const AddCourses = () => {
   const [isLoading, setLoading] = useState('')
 
   const navigate=useNavigate();
+  const location=useLocation();
+
+  useEffect(()=>{
+    if(location.state){
+      console.log(location.state);
+    }
+  })
 
 const submitHandler=(e)=>{
   e.preventDefault()
@@ -58,7 +65,7 @@ const submitHandler=(e)=>{
   return (
     <div>
         <form onSubmit={submitHandler} className='form'>
-          <h1>Add New Course</h1>
+          <h1>{location.state ? 'Edit Course' :'Add New Course'}</h1>
             <input required onChange={e=>{setCourseName(e.target.value)}} placeholder='Course name' type='text'/>
             <input required onChange={e=>{setDescription(e.target.value)}} placeholder='Description' type='text'/>
             <input required onChange={e=>{setPrice(e.target.value)}} placeholder='Price' type='number'/>

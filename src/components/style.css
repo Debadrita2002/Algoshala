@@ -242,6 +242,8 @@ select{
 .course-detail-img{
     height: 230px;
     width: 400px;
+    border-radius: 10px;
+    margin-top: 16px;
 }
 .course-detail-main-wrapper{
     background-color: #f5f2f2;
@@ -293,10 +295,30 @@ tr:hover{
     width: 100%;
     overflow: auto ;
 }
-.course-des-container{
-    height: 230px;
+.course-des-box{
+    width: 30%;
 }
 .onn{
+    width: 100%;
     overflow: auto;
     height: 180px;
+}
+.primary-btn{
+    background-color: #7033FF;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.secondary-btn{
+    background-color:#F65164;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-container{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }

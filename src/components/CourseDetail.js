@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
@@ -7,6 +7,8 @@ const CourseDetail = () => {
     const params=useParams();
     const [course,setCourse] = useState(null)
     const [studentList, setStudentList] = useState([])
+
+    const navigate=useNavigate();
 
     useEffect(() => {
       getCourseDetail()
@@ -41,24 +43,14 @@ return (
             <p>Starting date:- {course.startingDate}</p>
             <p>End date:- {course.endDate}</p>
           </div>
-          <div>
-            <div>
-              <button>Edit</button>
-              <button>Delete</button>
+          <div className='course-des-box'>
+            <div className='btn-container'>
+              <button className='primary-btn' onClick={()=>{navigate('/dashboard/add-course',{state:{course}})}} key={course._id} >Edit</button>
+              <button className='secondary-btn'>Delete</button>
             </div>
-            <div className='course-des-container'>
-              <h3>Course Description</h3>
-              <div className='onn'>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-                <p> Description:- {course.description}</p>
-              </div>
+            <h3>Course Description</h3>
+            <div className='onn'>
+              <p> Description:- {course.description}</p>
             </div>
           </div>
         </div>
