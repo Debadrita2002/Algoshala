@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 const Students = () => {
   const [studentList, setStudentList] = useState([])
-
+  const navigate=useNavigate();
   useEffect(()=>{
     getStudentList();
   })
@@ -39,7 +40,7 @@ const Students = () => {
             </thead>
             <tbody>
               {studentList.map((student) => (
-                <tr className='student-row' key={student._id}>
+                <tr onClick={()=>{navigate('/dashboard/student-detail/'+student._id)}} className='student-row' key={student._id}>
                   <td><img className='student-img' src={student.imageUrl} alt={student.fullName} /></td>
                   <td><p>{student.fullName}</p></td>
                   <td><p>{student.phone}</p></td>

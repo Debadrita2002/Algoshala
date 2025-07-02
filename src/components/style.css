@@ -209,7 +209,6 @@ select{
     flex-direction: row;
     gap: 25px;
     flex-wrap: wrap;
-    justify-content: space-between;
     overflow: auto;
 }
 .course-box{
@@ -259,9 +258,10 @@ select{
     padding: 3px;
 }
 .studentlist-container{
+    margin-top: -33px;
     width: 100%;
     height: 45vh;
-    background-color: white;
+    background-color: rgb(255, 254, 254);
     overflow-y: auto;
     border-radius: 10px;
 }
@@ -321,4 +321,129 @@ tr:hover{
     display: flex;
     gap: 10px;
     margin-top: 15px;
+}
+
+
+/*.........student detail /.............*/
+.student-detail-main-wrapper{
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+}
+
+.student-detail-wrapper{
+    width: 100%;
+    height: 30vh;
+}
+.fee-detail-wrapper{
+    width: 100%;
+    height: 40vh;
+    overflow: auto;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 10px;
+}
+.student-detail-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.student-detail-header h2{
+    margin-top: -10px;
+}
+.sd-btn-container{
+    width: 30%;
+    display: flex;
+    gap: 2%;
+}
+.sd-detail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+}
+.sd-detail img{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px;
+}
+
+.payment-history-title{
+    font-size: 18px;
+    color: #7033FF;
+}
+.payment-history-wrapper{
+    height: 80vh;
+    width: 100%;
+    overflow: auto;
+}
+
+/*................home........*/
+.home-wrapper{
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+}
+.count-box-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    justify-content: space-around;
+}
+.box1{
+    width: 32%;
+    height: 30vh;
+    background-color: #ac5a5a;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.box2{
+    width: 32%;
+    height: 30vh;
+    background-color: #6d5aac;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.box3{
+    width: 32%;
+    height: 30vh;
+    background-color: #5aac73;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.box1 p{
+    font-size: 25px;
+}
+.box2 p{
+    font-size: 25px;
+}
+.box3 p{
+    font-size: 25px;
+}
+.list-container{
+    width: 100%;
+    height: 48vh;
+    background-color: #e6ecea;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+}
+.table-container{
+    width: 48%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

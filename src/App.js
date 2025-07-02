@@ -12,6 +12,7 @@ import AddStudent from './components/AddStudent';
 import CollectFee from './components/CollectFee';
 import PaymentHistory from './components/PaymentHistory';
 import CourseDetail from './components/CourseDetail';
+import StudentDetail from './components/StudentDetail';
 
 function App() {
   const myRouter = createBrowserRouter([
@@ -27,7 +28,10 @@ function App() {
       {path:'add-student',Component:AddStudent},
       {path:'collect-fee',Component:CollectFee},
       {path:'payment-history',Component:PaymentHistory},
-      {path:'course-detail/:id',Component:CourseDetail}
+      {path:'course-detail/:id',Component:CourseDetail},
+      {path:'update-course/:id',Component:AddCourses},
+      {path:'student-detail/:id',Component:StudentDetail},
+      {path:'update-student/:id',Component:AddStudent},
     ]}
   ])
   return (

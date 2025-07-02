@@ -14,7 +14,7 @@ const CourseDetail = () => {
       getCourseDetail()
     }, [])
 
-    const getCourseDetail=()=>{
+  const getCourseDetail=()=>{
     axios.get('https://learning-management-system-self-delta.vercel.app/course/course-detail/'+params.id,{
       headers:{
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -29,6 +29,25 @@ const CourseDetail = () => {
       console.log(err)
       toast.error('something is wrong...')
     })
+  }
+
+  const deleteCourse = (courseId)=>{
+    alert('Got to deleteCourse')
+    if(window.confirm('are you sure you want to delete ?')){
+      axios.delete('https://learning-management-system-self-delta.vercel.app/course/'+courseId,{
+        headers:{
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      .then(res=>{
+        console.log(res.data)
+        navigate('/dashboard/courses')
+      })
+      .catch(err=>{
+        console.log(err)
+        toast.error('something is wrong...')
+      })
+    }
   }
     
 return (
@@ -45,8 +64,8 @@ return (
           </div>
           <div className='course-des-box'>
             <div className='btn-container'>
-              <button className='primary-btn' onClick={()=>{navigate('/dashboard/add-course',{state:{course}})}} key={course._id} >Edit</button>
-              <button className='secondary-btn'>Delete</button>
+              <button className='primary-btn' onClick={()=>{navigate('/dashboard/update-course/'+course._id,{state:{course}})}} key={course._id} >Edit</button>
+              <button className='secondary-btn' key={course._id} onClick={()=>{deleteCourse(course._id)}}>Delete</button>
             </div>
             <h3>Course Description</h3>
             <div className='onn'>
@@ -70,7 +89,7 @@ return (
           </thead>
           <tbody>
             {studentList.map((student) => (
-              <tr className='student-row' key={student._id}>
+              <tr onClick={()=>{navigate('/dashboard/student-detail/'+student._id)}} className='student-row' key={student._id}>
                 <td><img className='student-img' src={student.imageUrl} alt={student.fullName} /></td>
                 <td><p>{student.fullName}</p></td>
                 <td><p>{student.phone}</p></td>
